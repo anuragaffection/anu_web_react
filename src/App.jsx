@@ -14,7 +14,7 @@ import NoPage from "./pages/NoPage";
 function App() {
   return (
     <BrowserRouter>
-      <div className="flex h-full max-h-screen min-h-screen w-full">
+      <div className="flex h-full max-h-screen w-full">
         <div className="w-24 border border-r-neutral-300">
           <Sidebar />
         </div>
