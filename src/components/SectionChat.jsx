@@ -20,15 +20,19 @@ function SectionChat() {
     },
   ]);
   return (
-    <div className="flex h-full w-full flex-col justify-between items-center space-y-6 py-8 ">
-
+    <div className="flex h-full w-full flex-col items-center justify-between space-y-6 py-8">
       <div className="flex h-full w-full flex-col items-center justify-center overflow-auto">
-        <div className="flex h-full w-full max-w-3xl flex-col gap-y-8">
+        <div className="flex h-full w-full max-w-3xl flex-col gap-y-8 pt-6">
           {chats &&
             chats.map((item, index) => {
               return (
                 <div className="space-y-4" key={index}>
-                  <p className="bg-blue-500 text-lg">{item.user}</p>
+                  <div className="flex justify-end">
+                    <p className="items-end rounded-lg border border-neutral-300 bg-warmBeige px-4 py-3 text-right text-lg">
+                      {item.user}
+                    </p>
+                  </div>
+
                   <p className="text-xl">{item.anu}</p>
                 </div>
               );
@@ -36,7 +40,7 @@ function SectionChat() {
         </div>
       </div>
 
-      <div className=" w-full max-w-3xl flex flex-col gap-y-2">
+      <div className="flex w-full max-w-3xl flex-col gap-y-2">
         <input
           type="text"
           placeholder="Talk With Anu"
