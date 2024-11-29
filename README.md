@@ -1,4 +1,23 @@
-# React + Vite
+# Anu AI
+
+## Tech
+
+- `vite + react`
+- `tailwind`
+- `react-router-dom`
+- `npm install -D prettier prettier-plugin-tailwindcss`
+-
+
+## Getting the color
+
+- `from inspect only`
+- rbg(250, 243, 234)
+
+## Tailwind
+
+- `input focus`
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
