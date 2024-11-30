@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 // components
 import SectionChat from "./components/SectionChat";
 import Sidebar from "./components/Sidebar";
+import DicoverImgLayout from "./components/discoverComponents/DicoverImgLayout";
 
 // pages
 import Discover from "./pages/Discover";
@@ -13,7 +14,6 @@ import NoPage from "./pages/NoPage";
 
 function App() {
   return (
-
     <div className="flex h-full max-h-screen min-h-screen w-full flex-col lg:flex-row">
       <div className="w-full border border-r-neutral-300 lg:w-24">
         <Sidebar />
@@ -22,9 +22,11 @@ function App() {
         <Routes>
           <Route path="/" element={<> </>} />
           <Route path="/discover" element={<Discover />} />
+          <Route path="/discoverl" element={<DicoverImgLayout />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/threads" element={<Thread />} />
           <Route path="/talk" element={<></>} />
+
           <Route path="*" element={<NoPage />} />
         </Routes>
       </div>
@@ -32,7 +34,6 @@ function App() {
         <SectionChat />
       </div>
     </div>
-
   );
 }
 

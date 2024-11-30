@@ -7,7 +7,15 @@ function SectionChat() {
   const chatEndRef = useRef(null);
   const chatStates = useContext(ChatContext);
   const [userQuestion, setUserQuestion] = useState("");
-  const { chats, setChats } = chatStates;
+  const { chats, setChats, currentThread, threadsCollection } = chatStates;
+
+  console.log(threadsCollection);
+  console.log(currentThread);
+
+  // no issue , it getting run one times only
+  useEffect(() => {
+    setChats(threadsCollection[currentThread]);
+  }, [currentThread]);
 
   const handleSend = async () => {
     if (userQuestion.trim() === "") {
@@ -18,6 +26,7 @@ function SectionChat() {
           anu: "Please increase your question size.",
         },
       ]);
+
       return;
     }
 
@@ -37,15 +46,16 @@ function SectionChat() {
           index === prevChats.length - 1 ? { ...item, anu: answer } : item,
         ),
       );
+
       console.log(answer);
     } catch (error) {
       setChats((prevChats) =>
         prevChats.map((item, index) =>
           index === prevChats.length - 1
             ? {
-              ...item,
-              anu: "Sorry, an error has occurred. Please contact the developer.",
-            }
+                ...item,
+                anu: "Sorry, an error has occurred. Please contact the developer.",
+              }
             : item,
         ),
       );

@@ -23,6 +23,8 @@
 - `finding color`
 - `use ref`
 - `browser router`
+- `grid layout - challenging`
+- `thread updation - happening one step behind - instead of function calling - used useEffect`
 
 ## Getting the color
 
