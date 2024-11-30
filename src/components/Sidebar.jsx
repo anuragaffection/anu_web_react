@@ -15,7 +15,7 @@ function Sidebar() {
         onClick={() =>
           navigate(location.pathname === "/discover" ? "/talk" : "/discover")
         }
-        className="shadow-beige-sm flex min-w-20 cursor-pointer flex-col items-center gap-1 rounded-lg p-2 hover:border-neutral-300 hover:bg-warmBeige hover:shadow"
+        className="shadow-beige-sm flex min-w-20 cursor-pointer flex-col items-center gap-1 rounded-lg p-2 hover:border-neutral-300 hover:bg-darkBeige "
       >
         <BsStars size={24} />
         <span>Discover</span>
@@ -24,7 +24,7 @@ function Sidebar() {
         onClick={() =>
           navigate(location.pathname === "/threads" ? "/talk" : "/threads")
         }
-        className="shadow-beige-sm flex min-w-20 cursor-pointer flex-col items-center gap-1 rounded-lg p-2 hover:border-neutral-300 hover:bg-warmBeige hover:shadow"
+        className="shadow-beige-sm flex min-w-20 cursor-pointer flex-col items-center gap-1 rounded-lg p-2 hover:border-neutral-300 hover:bg-darkBeige"
       >
         <IoIosPaper size={24} />
         <span>Threads</span>
@@ -33,7 +33,7 @@ function Sidebar() {
         onClick={() =>
           navigate(location.pathname === "/profile" ? "/talk" : "/profile")
         }
-        className="shadow-beige-sm flex min-w-20 cursor-pointer flex-col items-center gap-1 rounded-lg p-2 hover:border-neutral-300 hover:bg-warmBeige hover:shadow"
+        className="shadow-beige-sm flex min-w-20 cursor-pointer flex-col items-center gap-1 rounded-lg p-2 hover:border-neutral-300 hover:bg-darkBeige"
       >
         <FaUser size={24} />
         <span>Profile</span>
