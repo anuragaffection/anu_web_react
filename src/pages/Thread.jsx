@@ -48,36 +48,38 @@ function Thread() {
     },
   ];
   return (
-    <div className="flex w-96 border border-r-neutral-300 bg-warmBeige pb-1 pt-8">
+    <div className="flex h-full w-96 border border-r-neutral-300 bg-beige pb-1 pt-8">
       <div className="flex h-full w-full flex-col">
+        {/* header  */}
         <div className="mb-3 flex w-full px-4">
           <header className="flex h-full w-full max-w-2xl items-center justify-between">
             <h1 className="font-serif text-4xl">Threads</h1>
-            <button className="flex items-center gap-2 rounded-lg bg-[#f5efe6] px-4 py-2 text-[#004d40] transition-colors hover:bg-[#e6dfd6]">
+            <button className="flex items-center gap-2 rounded-lg bg-coreBeige px-4 py-2 text-darkGreen transition-colors hover:bg-darkBeige">
               <span className="font-medium">New thread</span>
               <LuPlus className="h-5 w-5" />
             </button>
           </header>
         </div>
 
+        {/* threads */}
         <div className="flex w-full flex-col overflow-auto px-4 py-6">
           <div className="w-full max-w-2xl space-y-4">
             {threads.map((thread, index) => (
               <div key={thread.id}>
                 {thread.timestamp && (
-                  <div className="mb-4 text-sm text-gray-500">
+                  <div className="mb-4 text-sm text-coreGray">
                     {thread.timestamp}
                   </div>
                 )}
                 <Link href={`/thread/${thread.id}`}>
-                  <div className="rounded-xl bg-[#f5efe6] p-4 transition-colors hover:bg-[#e6dfd6]">
+                  <div className="rounded-xl bg-coreBeige p-4 transition-colors hover:bg-darkBeige">
                     {thread.icon && <div className="mb-2">{thread.icon}</div>}
                     {thread.title && (
-                      <h2 className="mb-1 text-xl text-gray-600">
+                      <h2 className="mb-1 text-xl text-warmGray">
                         {thread.title}
                       </h2>
                     )}
-                    <p className="text-lg text-[#004d40]">{thread.preview}</p>
+                    <p className="text-lg text-darkGreen">{thread.preview}</p>
                   </div>
                 </Link>
               </div>

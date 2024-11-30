@@ -1,5 +1,10 @@
 # Anu AI
 
+## important todo
+
+- change frotend url
+- also vercel routing problem
+
 ## Tech
 
 - `vite + react`
@@ -17,6 +22,7 @@
 
 - `finding color`
 - `use ref`
+- `browser router`
 
 ## Getting the color
 

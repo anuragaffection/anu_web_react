@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // components
 import SectionChat from "./components/SectionChat";
@@ -13,11 +13,12 @@ import NoPage from "./pages/NoPage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="flex h-full max-h-screen w-full">
-        <div className="w-24 border border-r-neutral-300">
-          <Sidebar />
-        </div>
+
+    <div className="flex h-full max-h-screen min-h-screen w-full flex-col lg:flex-row">
+      <div className="w-full border border-r-neutral-300 lg:w-24">
+        <Sidebar />
+      </div>
+      <div className="hidden lg:block">
         <Routes>
           <Route path="/" element={<> </>} />
           <Route path="/discover" element={<Discover />} />
@@ -26,11 +27,12 @@ function App() {
           <Route path="/talk" element={<></>} />
           <Route path="*" element={<NoPage />} />
         </Routes>
-        <div className="flex-1">
-          <SectionChat />
-        </div>
       </div>
-    </BrowserRouter>
+      <div className="flex-1">
+        <SectionChat />
+      </div>
+    </div>
+
   );
 }
 

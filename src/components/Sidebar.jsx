@@ -10,7 +10,7 @@ function Sidebar() {
   console.log(location);
 
   return (
-    <div className="flex h-full w-full flex-col items-center gap-2 p-3 pt-5">
+    <div className="flex h-full w-full items-center gap-2 p-3 pt-5 lg:flex-col">
       <div
         onClick={() =>
           navigate(location.pathname === "/discover" ? "/talk" : "/discover")
