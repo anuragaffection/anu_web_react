@@ -2,6 +2,7 @@ import React from "react";
 import ImgRectangle from "../ImgComponents/ImgRectangle";
 import ImgSquareSm from "../ImgComponents/ImgSquareSm";
 
+
 function DiscoverImgShort({ discoverData }) {
   console.log(discoverData);
   return (

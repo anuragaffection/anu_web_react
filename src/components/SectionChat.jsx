@@ -12,7 +12,7 @@ function SectionChat() {
   console.log(threadsCollection);
   console.log(currentThread);
 
-  // no issue , it getting run one times only
+  // this is also resetting setChats, value in any value - defined 
   useEffect(() => {
     setChats(threadsCollection[currentThread]);
   }, [currentThread]);
@@ -53,9 +53,9 @@ function SectionChat() {
         prevChats.map((item, index) =>
           index === prevChats.length - 1
             ? {
-                ...item,
-                anu: "Sorry, an error has occurred. Please contact the developer.",
-              }
+              ...item,
+              anu: "Sorry, an error has occurred. Please contact the developer.",
+            }
             : item,
         ),
       );
