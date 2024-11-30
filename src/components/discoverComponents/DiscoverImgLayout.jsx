@@ -2,10 +2,11 @@ import React from "react";
 import ImgRectangle from "../ImgComponents/ImgRectangle";
 import ImgSquareSm from "../ImgComponents/ImgSquareSm";
 
-function DicoverImgLayout() {
+function DiscoverImgLayout() {
     return (
-        <div className="container grid w-full grid-cols-1 grid-flow-col gap-4 space-y-4 p-10 md:grid-flow-row md:grid-cols-2">
-            <div className="grid grid-cols-2 gap-4">
+        <div className="flex flex-col anu-md:grid w-full anu-sm:grid-cols-1 anu-md:grid-cols-2 gap-4 p-10">
+            {/* First Row */}
+            <div className="grid anu-sm:grid-cols-1 anu-md:grid-cols-2 gap-4">
                 <ImgSquareSm
                     to="/talk"
                     src="/placeholder.png?height=400&width=600"
@@ -13,7 +14,6 @@ function DicoverImgLayout() {
                     text="How to start saving money"
                     className="flex-1"
                 />
-
                 <ImgSquareSm
                     to="/talk"
                     src="/placeholder.png?height=400&width=600"
@@ -23,17 +23,18 @@ function DicoverImgLayout() {
                 />
             </div>
 
-            <div className="md:row-start-2">
+            {/* Second Row */}
+            <div className="anu-md:row-start-2">
                 <ImgRectangle
                     to="/talk"
                     src="/placeholder.png?height=400&width=600"
                     alt="Piggy bank"
                     text="How to start saving money"
-                    className=""
                 />
             </div>
 
-            <div className="bg-lime-500 md:row-span-2">
+            {/* Third Row */}
+            <div className="bg-lime-500 anu-md:row-span-2">
                 <ImgSquareSm
                     to="/talk"
                     src="/placeholder.png?height=400&width=600"
@@ -43,17 +44,18 @@ function DicoverImgLayout() {
                 />
             </div>
 
-            <div className="bg-pink-500 md:col-start-2">
+            {/* Fourth Row */}
+            <div className="bg-pink-500 anu-md:col-start-2">
                 <ImgRectangle
                     to="/talk"
                     src="/placeholder.png?height=400&width=600"
                     alt="Piggy bank"
                     text="How to start saving money"
-                    className=""
                 />
             </div>
 
-            <div className="grid grid-cols-2 gap-4 bg-amber-500 md:row-start-4">
+            {/* Fifth Row */}
+            <div className="grid anu-sm:grid-cols-1 anu-md:grid-cols-2 gap-4 bg-amber-500 anu-md:row-start-4">
                 <ImgSquareSm
                     to="/talk"
                     src="/placeholder.png?height=400&width=600"
@@ -61,7 +63,6 @@ function DicoverImgLayout() {
                     text="How to start saving money"
                     className="flex-1"
                 />
-
                 <ImgSquareSm
                     to="/talk"
                     src="/placeholder.png?height=400&width=600"
@@ -71,7 +72,8 @@ function DicoverImgLayout() {
                 />
             </div>
 
-            <div className="bg-blue-500 md:col-start-1 md:row-start-3 md:row-end-5">
+            {/* Sixth Row */}
+            <div className="bg-blue-500 anu-md:col-start-1 anu-md:row-start-3 anu-md:row-end-5">
                 <ImgSquareSm
                     to="/talk"
                     src="/placeholder.png?height=400&width=600"
@@ -84,4 +86,4 @@ function DicoverImgLayout() {
     );
 }
 
-export default DicoverImgLayout;
+export default DiscoverImgLayout;

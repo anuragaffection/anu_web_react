@@ -17,6 +17,7 @@ function Discover() {
           <DiscoverImg />
           <DiscoverImg2 />
         </div>
+
       </div>
     </div>
   );

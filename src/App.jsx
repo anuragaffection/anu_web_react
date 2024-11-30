@@ -5,12 +5,14 @@ import { Routes, Route } from "react-router-dom";
 import SectionChat from "./components/SectionChat";
 import Sidebar from "./components/Sidebar";
 import DicoverImgLayout from "./components/discoverComponents/DicoverImgLayout";
+import DicoverImgLayout2 from "./components/discoverComponents/DiscoverImgL2";
 
 // pages
 import Discover from "./pages/Discover";
 import Profile from "./pages/Profile";
 import Thread from "./pages/Thread";
 import NoPage from "./pages/NoPage";
+import DiscoverImgLayout from "./components/discoverComponents/DiscoverImgLayout";
 
 function App() {
   return (
@@ -22,7 +24,6 @@ function App() {
         <Routes>
           <Route path="/" element={<> </>} />
           <Route path="/discover" element={<Discover />} />
-          <Route path="/discoverl" element={<DicoverImgLayout />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/threads" element={<Thread />} />
           <Route path="/talk" element={<></>} />
