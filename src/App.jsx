@@ -4,8 +4,6 @@ import { Routes, Route } from "react-router-dom";
 // components
 import SectionChat from "./components/SectionChat";
 import Sidebar from "./components/Sidebar";
-import DicoverImgLayout from "./components/discoverComponents/DicoverImgLayout";
-import DicoverImgLayout2 from "./components/discoverComponents/DiscoverImgL2";
 
 // pages
 import Discover from "./pages/Discover";
@@ -24,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<> </>} />
           <Route path="/discover" element={<Discover />} />
+          <Route path="/discoverl" element={<DiscoverImgLayout />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/threads" element={<Thread />} />
           <Route path="/talk" element={<></>} />

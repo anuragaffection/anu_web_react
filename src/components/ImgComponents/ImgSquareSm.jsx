@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function ImgSquareSm({ to, src, alt, text, className = "" }) {
   return (
     <Link to={`${to}`} className={`block ${className}`}>
-      <div className="group relative h-full w-full overflow-hidden rounded-2xl">
+      <div className="group relative h-full min-h-36 w-full overflow-hidden rounded-2xl">
         <img
           src={`${src}`}
           alt={`${alt}`}
