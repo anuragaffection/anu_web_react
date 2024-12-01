@@ -27,6 +27,7 @@ function App() {
 
   return (
     <div className="flex h-full max-h-screen min-h-screen w-full flex-row">
+
       <div className="hidden w-full border border-r-neutral-300 lg:block lg:w-24">
         <Sidebar />
       </div>
@@ -47,7 +48,6 @@ function App() {
       {isModal && (
         <div className="fixed inset-0 z-50 flex h-full w-full flex-col items-center justify-center overflow-auto lg:hidden">
           {/* <div className="relative h-full w-full bg-lime-500"> */}
-
           <div className="sticky right-0 top-0 z-50 flex w-full items-center justify-between bg-beige px-4 py-2">
             <Link
               to={"/"}
@@ -72,7 +72,11 @@ function App() {
           {/* </div> */}
         </div>
       )}
-      <div className="flex-1 overflow-clip">
+
+
+
+
+      <div className="flex-1  overflow-clip">
         <SectionChat />
       </div>
     </div>

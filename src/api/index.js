@@ -1,7 +1,7 @@
 export const getAnswers = async (question) => {
   try {
     const response = await fetch(
-      `https://anu-api-js.vercel.app/?question=${question}`,
+      `https://anu-api-js.vercel.app/talk_anu?question=${question}`,
     );
 
     if (!response.ok) {
