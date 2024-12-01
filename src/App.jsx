@@ -16,6 +16,7 @@ import { IoIosPaper } from "react-icons/io";
 
 import { FaUser } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import History from "./pages/subPageProfile/History";
 
 function App() {
   const location = useLocation();
@@ -35,6 +36,7 @@ function App() {
           <Route path="/discover" element={<Discover />} />
           <Route path="/discoverl" element={<DiscoverImgLayout />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/history" element={<History />} />
           <Route path="/threads" element={<Thread />} />
           <Route path="/talk" element={<></>} />
 
@@ -63,7 +65,6 @@ function App() {
           <div className="h-full w-full overflow-hidden">
             <Routes>
               <Route path="/discover" element={<Discover />} />
-              <Route path="/discoverl" element={<DiscoverImgLayout />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/threads" element={<Thread />} />
             </Routes>

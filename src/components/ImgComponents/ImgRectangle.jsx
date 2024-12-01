@@ -64,7 +64,7 @@ function ImgRectangle({ to, src, alt, text, className = "" }) {
 
   return (
     <button onClick={handleDiscoverClick} className={`block ${className}`}>
-      <div className="group flex h-full min-h-36 w-full items-end justify-center overflow-hidden rounded-2xl bg-coreBeige p-4 transition-colors hover:bg-darkBeige">
+      <div className="group flex h-full min-h-36 w-full transform items-end justify-center overflow-hidden rounded-2xl bg-coreBeige p-4 transition-transform hover:scale-95 hover:bg-darkBeige">
         <div className="flex-1 text-start text-xl font-medium text-darkGreen">
           {text}
         </div>

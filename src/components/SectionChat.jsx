@@ -110,7 +110,7 @@ function SectionChat() {
       <TopBar />
       {/* removing link - because it creating hinderance in next */}
       <button
-        className="absolute right-10 top-2 z-10 rounded-full bg-coreBeige p-2 hover:bg-darkBeige"
+        className="absolute right-4 md:right-10 top-2 z-10 rounded-full bg-coreBeige p-2 hover:bg-darkBeige"
         type="button"
         onClick={() => setSpeech(!speech)}
       >

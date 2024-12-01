@@ -64,14 +64,14 @@ function ImgSquareSm({ to, src, alt, text, className = "" }) {
 
   return (
     <button onClick={handleDiscoverClick} className={`block ${className}`}>
-      <div className="group relative h-full min-h-36 w-full overflow-hidden rounded-2xl">
+      <div className="group relative h-full min-h-36 w-full transform overflow-hidden rounded-2xl transition-transform hover:scale-95">
         <img
           src={`${src}`}
           alt={`${alt}`}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/30 transition-colors group-hover:bg-black/40">
-          <h3 className="absolute bottom-4 left-4 text-xl font-medium text-white">
+        <div className="absolute inset-0 bg-black/30 transition-colors">
+          <h3 className="absolute bottom-2 left-4 text-start text-xl font-medium text-beige">
             {`${text}`}
           </h3>
         </div>

@@ -9,12 +9,7 @@ const ChatState = (props) => {
 
   // 01. chats
   // -- on thread creation, chats are getting reset,
-  const [chats, setChats] = useState([
-    {
-      user: "What is ANU",
-      anu: "Hello! I am ANU, your Assistance & Nurturing Unit. My main purpose is to assist you in any way I can, providing accurate information, guidance, and support across a wide range of topics. Whether you need help solving problems, finding answers to your questions, or just a little direction along your journey, I'm here to help.",
-    },
-  ]);
+  const [chats, setChats] = useState([]);
 
   // 02. thread - this will be changing, but always (keep in mind )
   // -- whenever refresh will happens, it will always start from thread-first
@@ -24,7 +19,12 @@ const ChatState = (props) => {
   // - if threadcollection is not available, return object, with one default threads
   const [threadsCollection, setThreadsCollection] = useState(
     JSON.parse(localStorage.getItem("threadsCollection")) || {
-      "thread-first": [],
+      "thread-first": [
+        {
+          user: "What is ANU",
+          anu: "Hello! I am ANU, your Assistance & Nurturing Unit. My main purpose is to assist you in any way I can, providing accurate information, guidance, and support across a wide range of topics. Whether you need help solving problems, finding answers to your questions, or just a little direction along your journey, I'm here to help.",
+        },
+      ],
     },
   );
 

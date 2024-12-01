@@ -35,7 +35,7 @@ function Profile() {
             <ProfileButton
               icon={FaHistory}
               text="Manage history"
-              link="/history"
+              link="/profile/history"
             />
             <ProfileButton
               icon={BiVolume}

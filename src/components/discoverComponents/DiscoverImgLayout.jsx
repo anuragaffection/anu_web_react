@@ -4,7 +4,7 @@ import ImgSquareSm from "../ImgComponents/ImgSquareSm";
 
 function DiscoverImgLayout() {
   return (
-    <div className="container grid grid-flow-col grid-cols-1 gap-4 space-y-4 p-10 md:grid-flow-row md:grid-cols-2">
+    <div className="grid grid-flow-col grid-cols-1 gap-4 space-y-4 p-10 md:grid-flow-row md:grid-cols-2">
       <div className="grid grid-cols-2 gap-4">
         <ImgSquareSm
           to="/talk"

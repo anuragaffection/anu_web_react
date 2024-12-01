@@ -36,7 +36,7 @@ function Thread() {
           <div className="w-full max-w-2xl space-y-4">
             {threadsCollection &&
               Object.entries(threadsCollection).map((thread, index) => (
-                <>
+                <div key={thread[0]}>
                   {thread[1]?.length > 0 && (
                     <button
                       key={thread[0]}
@@ -58,7 +58,7 @@ function Thread() {
                       </div>
                     </button>
                   )}
-                </>
+                </div>
               ))}
           </div>
         </div>
