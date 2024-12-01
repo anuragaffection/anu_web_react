@@ -62,6 +62,21 @@ const ChatState = (props) => {
     updateThreadCollectionChats();
   }, [chats]);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    handleResize(); // Check on initial load
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <ChatContext.Provider
       value={{
@@ -74,6 +89,8 @@ const ChatState = (props) => {
         updateThreadCollectionChats,
         getNewThread,
         selectThread,
+        isMobile,
+        setIsMobile,
       }}
     >
       {props.children}

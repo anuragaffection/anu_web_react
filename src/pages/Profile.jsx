@@ -25,7 +25,7 @@ const ProfileButton = ({ icon: Icon, text, link, additionalClass = "" }) => {
 
 function Profile() {
   return (
-    <div className="h-full w-96 border border-r-neutral-300 bg-beige">
+    <div className="h-full w-full border border-r-neutral-300 bg-beige lg:w-96">
       <div className="p-6">
         <div className="mx-auto max-w-2xl space-y-6">
           <h1 className="text-4xl font-bold text-darkGreenHigh">Anurag</h1>

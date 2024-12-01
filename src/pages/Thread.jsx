@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
 import { LuPlus } from "react-icons/lu";
 import ChatContext from "../store/ChatContext";
+import { useNavigate } from "react-router-dom";
 
 function Thread() {
   const chatStates = useContext(ChatContext);
-  const { getNewThread, threadsCollection, selectThread } = chatStates;
+  const { getNewThread, threadsCollection, selectThread, isMobile } =
+    chatStates;
+  const navigate = useNavigate();
 
   console.log("all threads");
   console.log(threadsCollection);
@@ -12,7 +15,7 @@ function Thread() {
   console.log(Object.entries(threadsCollection));
 
   return (
-    <div className="flex h-full w-96 border border-r-neutral-300 bg-beige pb-1 pt-8">
+    <div className="flex h-full w-full border border-r-neutral-300 bg-beige pb-1 pt-8 lg:w-96">
       <div className="flex h-full w-full flex-col">
         {/* header  */}
         <div className="mb-3 flex w-full px-4">
@@ -37,7 +40,12 @@ function Thread() {
                   {thread[1]?.length > 0 && (
                     <button
                       key={thread[0]}
-                      onClick={() => selectThread(thread[0])}
+                      onClick={() => {
+                        selectThread(thread[0]);
+                        if (isMobile) {
+                          navigate("/");
+                        }
+                      }}
                       className="w-full"
                     >
                       <div className="flex w-full flex-col items-start rounded-xl bg-coreBeige p-4 transition-colors hover:bg-darkBeige">

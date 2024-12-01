@@ -1,8 +1,11 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import { getAnswers } from "../api";
-import { BsArrowUp } from "react-icons/bs";
+import { BsArrowUp, BsStars } from "react-icons/bs";
 import { LuVolume2, LuVolumeX } from "react-icons/lu";
 import ChatContext from "../store/ChatContext";
+import { Link } from "react-router-dom";
+import { IoIosPaper } from "react-icons/io";
+import TopBar from "./TopBar";
 
 function SectionChat() {
   const chatEndRef = useRef(null);
@@ -16,7 +19,7 @@ function SectionChat() {
   console.log(currentThread);
 
   // this is also resetting setChats, value in any value - defined
-  // make current thread - strict, should not depend, on any other things, 
+  // make current thread - strict, should not depend, on any other things,
   // otherwise , will lead to infinite rendering
   useEffect(() => {
     setChats(threadsCollection[currentThread]);
@@ -58,9 +61,9 @@ function SectionChat() {
         prevChats.map((item, index) =>
           index === prevChats.length - 1
             ? {
-              ...item,
-              anu: "Sorry, an error has occurred. Please contact the developer.",
-            }
+                ...item,
+                anu: "Sorry, an error has occurred. Please contact the developer.",
+              }
             : item,
         ),
       );
@@ -82,16 +85,14 @@ function SectionChat() {
   }, [chats]);
 
   useEffect(() => {
-
     if (speech === false) {
       window.speechSynthesis.cancel();
-
     }
     // chats, {user, anu}
     if (speech === true && chats && chats.length > 0) {
       const lastIndex = chats.length - 1;
       const lastResponse = chats[lastIndex].anu;
-      console.log(lastResponse)
+      console.log(lastResponse);
       if (!window.speechSynthesis) {
         console.error("Speech synthesis not supported in this browser.");
       }
@@ -99,16 +100,17 @@ function SectionChat() {
       if (lastResponse && lastResponse.trim()) {
         const windowSpeech = window.speechSynthesis;
         const toSpeak = new SpeechSynthesisUtterance(lastResponse);
-        windowSpeech.speak(toSpeak)
+        windowSpeech.speak(toSpeak);
       }
     }
   }, [chats, speech]);
 
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-between space-y-6 py-4 pt-6 overflow-clip">
-
+    <div className="relative flex h-full w-full flex-col items-center justify-between gap-y-6 overflow-clip pb-4 pt-16">
+      <TopBar />
+      {/* removing link - because it creating hinderance in next */}
       <button
-        className="absolute right-10 top-6 rounded-full bg-coreBeige p-2 hover:bg-darkBeige z-50"
+        className="absolute right-10 top-2 z-10 rounded-full bg-coreBeige p-2 hover:bg-darkBeige"
         type="button"
         onClick={() => setSpeech(!speech)}
       >
@@ -118,7 +120,6 @@ function SectionChat() {
           <LuVolumeX className="text-coreGray" size={24} />
         )}
       </button>
-
 
       <div className="flex h-full w-full flex-col items-center justify-center overflow-auto p-2">
         <div className="flex h-full w-full max-w-3xl flex-col gap-y-8 px-4 pt-6">
@@ -155,13 +156,11 @@ function SectionChat() {
               <BsArrowUp />
             </button>
           </div>
-          <div className="text-center">
+          <div className="text-center text-sm lg:text-lg">
             Anu may make mistakes, please don't rely on its information.
           </div>
         </div>
       </div>
-
-
     </div>
   );
 }

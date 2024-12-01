@@ -1,15 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import ChatContext from "../../store/ChatContext";
 import { getAnswers } from "../../api";
+import { useNavigate } from "react-router-dom";
 
 function ImgRectangle({ to, src, alt, text, className = "" }) {
   const chatStates = useContext(ChatContext);
-  const { getNewThread, setChats } = chatStates;
+  const { getNewThread, setChats, isMobile } = chatStates;
+  const navigate = useNavigate();
 
   const handleDiscoverClick = async (e) => {
     e.preventDefault();
     await getNewThread();
     await handleSend();
+    if (isMobile) {
+      navigate("/");
+    }
   };
 
   const handleSend = async () => {
