@@ -1,17 +1,16 @@
 import React, { useContext } from "react";
-import ChatContext from "../../store/ChatContext"
+import ChatContext from "../../store/ChatContext";
 import { getAnswers } from "../../api";
 
 function ImgSquareSm({ to, src, alt, text, className = "" }) {
-
   const chatStates = useContext(ChatContext);
   const { getNewThread, setChats } = chatStates;
 
   const handleDiscoverClick = async (e) => {
     e.preventDefault();
-    await getNewThread()
+    await getNewThread();
     await handleSend();
-  }
+  };
 
   const handleSend = async () => {
     if (text.trim() === "") {
@@ -49,9 +48,9 @@ function ImgSquareSm({ to, src, alt, text, className = "" }) {
         prevChats.map((item, index) =>
           index === prevChats.length - 1
             ? {
-              ...item,
-              anu: "Sorry, an error has occurred. Please contact the developer.",
-            }
+                ...item,
+                anu: "Sorry, an error has occurred. Please contact the developer.",
+              }
             : item,
         ),
       );
@@ -59,10 +58,7 @@ function ImgSquareSm({ to, src, alt, text, className = "" }) {
   };
 
   return (
-    <button
-      onClick={handleDiscoverClick}
-      className={`block ${className}`}
-    >
+    <button onClick={handleDiscoverClick} className={`block ${className}`}>
       <div className="group relative h-full min-h-36 w-full overflow-hidden rounded-2xl">
         <img
           src={`${src}`}

@@ -4,17 +4,17 @@ import { FiMessageCircle } from "react-icons/fi";
 
 function DiscoverHistory() {
   return (
-    <Link href="/history" className="block">
-      <div className="rounded-2xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-        <div className="flex items-start gap-4">
-          <div className="rounded-full bg-purple-100 p-2">
-            <FiMessageCircle className="h-6 w-6 text-purple-600" />
+    <Link to="/history" className="block">
+      <div className="rounded-3xl bg-coreBeige p-6 transition-colors hover:bg-darkBeige">
+        <div className="flex items-center gap-4">
+          <div className="rounded-full p-2">
+            <FiMessageCircle className="h-6 w-6 text-darkGreenHigh" />
           </div>
           <div>
-            <h2 className="mb-2 font-serif text-2xl text-[#004d40]">
+            <h2 className="mb-2 font-serif text-3xl">
               Download your Pi conversation history
             </h2>
-            <p className="text-emerald-600">Manage history</p>
+            <p className="text-darkGreenHigh">Manage history</p>
           </div>
         </div>
       </div>

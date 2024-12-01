@@ -1,18 +1,23 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import { getAnswers } from "../api";
 import { BsArrowUp } from "react-icons/bs";
+import { LuVolume2, LuVolumeX } from "react-icons/lu";
 import ChatContext from "../store/ChatContext";
 
 function SectionChat() {
   const chatEndRef = useRef(null);
   const chatStates = useContext(ChatContext);
-  const [userQuestion, setUserQuestion] = useState("");
   const { chats, setChats, currentThread, threadsCollection } = chatStates;
+
+  const [userQuestion, setUserQuestion] = useState("");
+  const [speech, setSpeech] = useState(false);
 
   console.log(threadsCollection);
   console.log(currentThread);
 
-  // this is also resetting setChats, value in any value - defined 
+  // this is also resetting setChats, value in any value - defined
+  // make current thread - strict, should not depend, on any other things, 
+  // otherwise , will lead to infinite rendering
   useEffect(() => {
     setChats(threadsCollection[currentThread]);
   }, [currentThread]);
@@ -76,8 +81,46 @@ function SectionChat() {
     }
   }, [chats]);
 
+  useEffect(() => {
+
+    if (speech === false) {
+      window.speechSynthesis.cancel();
+
+    }
+    // chats, {user, anu}
+    if (speech === true && chats && chats.length > 0) {
+      const lastIndex = chats.length - 1;
+      const lastResponse = chats[lastIndex].anu;
+      console.log(lastResponse)
+
+      if (!window.speechSynthesis) {
+        console.error("Speech synthesis not supported in this browser.");
+      }
+      window.speechSynthesis.cancel();
+      if (lastResponse && lastResponse.trim()) {
+        const windowSpeech = window.speechSynthesis;
+        const toSpeak = new SpeechSynthesisUtterance(lastResponse);
+        windowSpeech.speak(toSpeak)
+      }
+    }
+  }, [chats, speech]);
+
   return (
-    <div className="flex h-full w-full flex-col items-center justify-between space-y-6 p-8">
+    <div className="relative flex h-full w-full flex-col items-center justify-between space-y-6 py-6">
+      <div className="right-10 top-6 md:absolute">
+        <button
+          className="rounded-full bg-coreBeige p-2 hover:bg-darkBeige"
+          type="button"
+          onClick={() => setSpeech(!speech)}
+        >
+          {speech === true ? (
+            <LuVolume2 className="text-darkGreen" size={24} />
+          ) : (
+            <LuVolumeX className="text-coreGray" size={24} />
+          )}
+        </button>
+      </div>
+
       <div className="flex h-full w-full flex-col items-center justify-center overflow-auto">
         <div className="flex h-full w-full max-w-3xl flex-col gap-y-8 px-4 pt-6">
           {chats &&

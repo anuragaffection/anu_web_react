@@ -15,7 +15,7 @@ function Sidebar() {
         onClick={() =>
           navigate(location.pathname === "/discover" ? "/talk" : "/discover")
         }
-        className="shadow-beige-sm flex min-w-20 cursor-pointer flex-col items-center gap-1 rounded-lg p-2 hover:border-neutral-300 hover:bg-darkBeige "
+        className="shadow-beige-sm flex min-w-20 cursor-pointer flex-col items-center gap-1 rounded-lg p-2 hover:border-neutral-300 hover:bg-darkBeige"
       >
         <BsStars size={24} />
         <span>Discover</span>

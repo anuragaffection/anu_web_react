@@ -25,6 +25,7 @@
 - `browser router`
 - `grid layout - challenging`
 - `thread updation - happening one step behind - instead of function calling - used useEffect`
+- `speech, text to speech`
 
 ## Getting the color
 
@@ -42,7 +43,16 @@
 - vite, https://v3.vitejs.dev/guide/
 - tailwind , https://tailwindcss.com/docs/guides/vite
 - react-router-dom, https://www.npmjs.com/package/react-router-dom
+- react speech , https://www.geeksforgeeks.org/create-a-text-to-speech-application-using-reactjs/
+- mdn speech - - https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
+- https://medium.com/@aifuture/no-library-required-to-build-a-text-to-speech-component-in-react-e6833a66cea2
 - useLocation reference
+
+## code
+
+```let utterance = new SpeechSynthesisUtterance("Hello world!");
+speechSynthesis.speak(utterance);
+```
 
 ## React + Vite
 

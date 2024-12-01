@@ -60,7 +60,7 @@ function Profile() {
             icon={FaDiscord}
             text="Join our Discord community"
             link="/discord"
-          // todo: add target plank, actuall link
+            // todo: add target plank, actuall link
           />
 
           <hr className="my-4 border-t border-coreGray" />
