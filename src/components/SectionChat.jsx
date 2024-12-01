@@ -108,7 +108,7 @@ function SectionChat() {
     <div className="relative flex h-full w-full flex-col items-center justify-between space-y-6 py-4 pt-6 overflow-clip">
 
       <button
-        className="absolute right-10 top-6 rounded-full bg-coreBeige p-2 hover:bg-darkBeige"
+        className="absolute right-10 top-6 rounded-full bg-coreBeige p-2 hover:bg-darkBeige z-50"
         type="button"
         onClick={() => setSpeech(!speech)}
       >
@@ -121,12 +121,7 @@ function SectionChat() {
 
 
       <div className="flex h-full w-full flex-col items-center justify-center overflow-auto p-2">
-
-        {/* <div className="w-full absolute top-0 h-24 bg-gradient-to-b from-black to-transparent"></div> */}
-
-        <div className="flex relative h-full w-full max-w-3xl flex-col gap-y-8 px-4 pt-6">
-
-
+        <div className="flex h-full w-full max-w-3xl flex-col gap-y-8 px-4 pt-6">
           {chats &&
             chats.map((item, index) => (
               <div className="space-y-4" key={index}>
@@ -142,27 +137,31 @@ function SectionChat() {
         </div>
       </div>
 
-      <div className="flex w-full max-w-3xl flex-col gap-y-2 px-6">
-        <div className="flex h-12 w-full scale-105 items-center justify-between gap-2 overflow-hidden rounded-full border border-neutral-300 bg-white">
-          <input
-            type="text"
-            value={userQuestion}
-            onChange={(e) => setUserQuestion(e.target.value)}
-            onKeyDown={handleKeyDown}
-            placeholder="Talk With Anu"
-            className="h-full flex-1 bg-white px-6 text-black focus:outline-none"
-          />
-          <button
-            onClick={handleSend}
-            className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-darkGreenHigh font-bold text-white"
-          >
-            <BsArrowUp />
-          </button>
-        </div>
-        <div className="text-center">
-          Anu may make mistakes, please don't rely on its information.
+      <div className="flex w-full flex-col items-center justify-center p-2">
+        <div className="flex w-full max-w-3xl flex-col gap-y-2 px-6">
+          <div className="flex h-12 w-full scale-105 items-center justify-between gap-2 overflow-hidden rounded-full border border-neutral-300 bg-white">
+            <input
+              type="text"
+              value={userQuestion}
+              onChange={(e) => setUserQuestion(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="Talk With Anu"
+              className="h-full flex-1 bg-white px-6 text-black focus:outline-none"
+            />
+            <button
+              onClick={handleSend}
+              className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-darkGreenHigh font-bold text-white"
+            >
+              <BsArrowUp />
+            </button>
+          </div>
+          <div className="text-center">
+            Anu may make mistakes, please don't rely on its information.
+          </div>
         </div>
       </div>
+
+
     </div>
   );
 }

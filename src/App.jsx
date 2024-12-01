@@ -14,8 +14,8 @@ import DiscoverImgLayout from "./components/discoverComponents/DiscoverImgLayout
 
 function App() {
   return (
-    <div className="flex h-full max-h-screen min-h-screen w-full flex-col lg:flex-row">
-      <div className="w-full border border-r-neutral-300 lg:w-24">
+    <div className="flex h-full max-h-screen min-h-screen w-full flex-row">
+      <div className="w-full hidden lg:block border border-r-neutral-300 lg:w-24">
         <Sidebar />
       </div>
       <div className="hidden lg:block">
