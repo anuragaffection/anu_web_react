@@ -34,12 +34,10 @@ function App() {
         <Routes>
           <Route path="/" element={<> </>} />
           <Route path="/discover" element={<Discover />} />
-          <Route path="/discoverl" element={<DiscoverImgLayout />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/history" element={<History />} />
           <Route path="/threads" element={<Thread />} />
           <Route path="/talk" element={<></>} />
-
           <Route path="*" element={<NoPage />} />
         </Routes>
       </div>
@@ -65,6 +63,7 @@ function App() {
             <Routes>
               <Route path="/discover" element={<Discover />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/profile/history" element={<History />} />
               <Route path="/threads" element={<Thread />} />
             </Routes>
           </div>
