@@ -92,7 +92,6 @@ function SectionChat() {
       const lastIndex = chats.length - 1;
       const lastResponse = chats[lastIndex].anu;
       console.log(lastResponse)
-
       if (!window.speechSynthesis) {
         console.error("Speech synthesis not supported in this browser.");
       }
@@ -106,23 +105,28 @@ function SectionChat() {
   }, [chats, speech]);
 
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-between space-y-6 py-6">
-      <div className="right-10 top-6 md:absolute">
-        <button
-          className="rounded-full bg-coreBeige p-2 hover:bg-darkBeige"
-          type="button"
-          onClick={() => setSpeech(!speech)}
-        >
-          {speech === true ? (
-            <LuVolume2 className="text-darkGreen" size={24} />
-          ) : (
-            <LuVolumeX className="text-coreGray" size={24} />
-          )}
-        </button>
-      </div>
+    <div className="relative flex h-full w-full flex-col items-center justify-between space-y-6 py-4 pt-6 overflow-clip">
 
-      <div className="flex h-full w-full flex-col items-center justify-center overflow-auto">
-        <div className="flex h-full w-full max-w-3xl flex-col gap-y-8 px-4 pt-6">
+      <button
+        className="absolute right-10 top-6 rounded-full bg-coreBeige p-2 hover:bg-darkBeige"
+        type="button"
+        onClick={() => setSpeech(!speech)}
+      >
+        {speech === true ? (
+          <LuVolume2 className="text-darkGreen" size={24} />
+        ) : (
+          <LuVolumeX className="text-coreGray" size={24} />
+        )}
+      </button>
+
+
+      <div className="flex h-full w-full flex-col items-center justify-center overflow-auto p-2">
+
+        {/* <div className="w-full absolute top-0 h-24 bg-gradient-to-b from-black to-transparent"></div> */}
+
+        <div className="flex relative h-full w-full max-w-3xl flex-col gap-y-8 px-4 pt-6">
+
+
           {chats &&
             chats.map((item, index) => (
               <div className="space-y-4" key={index}>
@@ -138,7 +142,7 @@ function SectionChat() {
         </div>
       </div>
 
-      <div className="flex w-full max-w-3xl flex-col gap-y-2 px-4 pl-6">
+      <div className="flex w-full max-w-3xl flex-col gap-y-2 px-6">
         <div className="flex h-12 w-full scale-105 items-center justify-between gap-2 overflow-hidden rounded-full border border-neutral-300 bg-white">
           <input
             type="text"

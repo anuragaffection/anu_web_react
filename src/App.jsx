@@ -30,7 +30,7 @@ function App() {
           <Route path="*" element={<NoPage />} />
         </Routes>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 overflow-clip">
         <SectionChat />
       </div>
     </div>
