@@ -22,7 +22,7 @@ function App() {
   const location = useLocation();
 
   const currentPath = location.pathname;
-  const modalRoutes = ["/discover", "/discoverl", "/profile", "/threads"];
+  const modalRoutes = ["/discover", "/discoverl", "/profile", "/threads", "/profile/history"];
   const isModal = modalRoutes.includes(currentPath);
 
   return (
