@@ -7,6 +7,9 @@ function Thread() {
   const chatStates = useContext(ChatContext);
   const { getNewThread, threadsCollection, selectThread } = chatStates;
 
+  console.log("all threads")
+  console.log(threadsCollection)
+  console.log("converting to array from object")
   console.log(Object.entries(threadsCollection));
 
   return (
@@ -31,20 +34,27 @@ function Thread() {
           <div className="w-full max-w-2xl space-y-4">
             {threadsCollection &&
               Object.entries(threadsCollection).map((thread, index) => (
-                <button key={thread[0]} onClick={() => selectThread(thread[0])}>
-                  {thread[1]?.length > 0 ? (
-                    <div className="flex w-full flex-col items-start rounded-xl bg-coreBeige p-4 transition-colors hover:bg-darkBeige">
-                      <div className="line-clamp-1 text-start text-lg text-warmGray">
-                        {thread[1][0]?.user.trim()}
-                      </div>
-                      <div className="line-clamp-1 text-start text-lg text-darkGreen">
-                        {thread[1][0]?.anu.trim()}
-                      </div>
-                    </div>
-                  ) : (
-                    <></>
-                  )}
-                </button>
+                <>
+                  {
+                    thread[1]?.length > 0 && (
+                      <button
+                        key={thread[0]}
+                        onClick={() => selectThread(thread[0])}
+                        className="w-full"
+                      >
+                        <div className="flex w-full flex-col items-start rounded-xl bg-coreBeige p-4 transition-colors hover:bg-darkBeige">
+                          <div className="line-clamp-1 text-start text-lg text-warmGray">
+                            {thread[1][0]?.user.trim()}
+                          </div>
+                          <div className="line-clamp-1 text-start text-lg text-darkGreen">
+                            {thread[1][0]?.anu.trim()}
+                          </div>
+                        </div>
+
+                      </button>
+                    )
+                  }
+                </>
               ))}
           </div>
         </div>

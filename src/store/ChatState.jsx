@@ -21,6 +21,7 @@ const ChatState = (props) => {
   const [currentThread, setCurrentThread] = useState(`thread-first`);
 
   //03.  collections of all the threads , each threads has multiple chats
+  // - if threadcollection is not available, return object, with one default threads
   const [threadsCollection, setThreadsCollection] = useState(
     JSON.parse(localStorage.getItem("threadsCollection")) || {
       "thread-first": [],
