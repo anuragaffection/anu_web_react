@@ -61,9 +61,9 @@ function SectionChat() {
         prevChats.map((item, index) =>
           index === prevChats.length - 1
             ? {
-              ...item,
-              anu: "Sorry, an error has occurred. Please contact the developer.",
-            }
+                ...item,
+                anu: "Sorry, an error has occurred. Please contact the developer.",
+              }
             : item,
         ),
       );
@@ -106,11 +106,11 @@ function SectionChat() {
   }, [chats, speech]);
 
   return (
-    <div className="relative  flex h-full w-full flex-col items-center justify-between gap-y-6 overflow-clip pb-4 pt-16">
+    <div className="relative flex h-full w-full flex-col items-center justify-between gap-y-6 overflow-clip pb-4 pt-16">
       <TopBar />
       {/* removing link - because it creating hinderance in next */}
       <button
-        className="absolute right-4 md:right-10 top-2 z-10 rounded-full bg-coreBeige p-2 hover:bg-darkBeige"
+        className="absolute right-4 top-2 z-10 rounded-full bg-coreBeige p-2 hover:bg-darkBeige md:right-10"
         type="button"
         onClick={() => setSpeech(!speech)}
       >

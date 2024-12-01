@@ -14,7 +14,7 @@ function TopBar() {
       </Link>
       <Link
         to={"/threads"}
-        className="absolute right-16 md:right-24 top-2 rounded-full bg-coreBeige p-2 hover:bg-darkBeige lg:hidden"
+        className="absolute right-16 top-2 rounded-full bg-coreBeige p-2 hover:bg-darkBeige md:right-24 lg:hidden"
       >
         <IoIosPaper size={24} />
       </Link>

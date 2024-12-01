@@ -27,7 +27,6 @@ function App() {
 
   return (
     <div className="flex h-full max-h-screen min-h-screen w-full flex-row">
-
       <div className="hidden w-full border border-r-neutral-300 lg:block lg:w-24">
         <Sidebar />
       </div>
@@ -73,10 +72,7 @@ function App() {
         </div>
       )}
 
-
-
-
-      <div className="flex-1  overflow-clip">
+      <div className="flex-1 overflow-clip">
         <SectionChat />
       </div>
     </div>

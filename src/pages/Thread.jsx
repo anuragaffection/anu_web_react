@@ -22,7 +22,12 @@ function Thread() {
           <header className="flex h-full w-full max-w-2xl items-center justify-between">
             <h1 className="font-serif text-4xl">Threads</h1>
             <button
-              onClick={(e) => getNewThread()}
+              onClick={() => {
+                getNewThread();
+                if (isMobile) {
+                  navigate("/");
+                }
+              }}
               className="flex items-center gap-2 rounded-lg bg-coreBeige px-4 py-2 text-darkGreen transition-colors hover:bg-darkBeige"
             >
               <span className="font-medium">New thread</span>
