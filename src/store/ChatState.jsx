@@ -8,6 +8,7 @@ const ChatState = (props) => {
   // 3. put/update all threads in a - thread collections
 
   // 01. chats
+  // -- on thread creation, chats are getting reset,
   const [chats, setChats] = useState([
     {
       user: "What is ANU",
@@ -16,6 +17,7 @@ const ChatState = (props) => {
   ]);
 
   // 02. thread - this will be changing, but always (keep in mind )
+  // -- whenever refresh will happens, it will always start from thread-first
   const [currentThread, setCurrentThread] = useState(`thread-first`);
 
   //03.  collections of all the threads , each threads has multiple chats
